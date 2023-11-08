@@ -1,5 +1,6 @@
 <script>
 import ProjectList from "./components/projects/ProjectList.vue";
+import AppHeader from "./components/AppHeader.vue";
 import axios from "axios";
 import { store } from "./data/store";
 export default {
@@ -13,10 +14,10 @@ export default {
         next: null,
         prev: null,
         links: null,
-      }
+      },
     };
   },
-  components: { ProjectList },
+  components: { AppHeader, ProjectList },
   methods: {
     fetchProjects(uri = store.baseUrl + "projects") {
       axios.get(uri).then((response) => {
@@ -36,6 +37,7 @@ export default {
 </script>
 
 <template>
+  <AppHeader></AppHeader>
   <router-view></router-view>
   <div class="container my-5">
     <div
