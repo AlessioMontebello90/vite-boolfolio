@@ -12,16 +12,13 @@ export default {
 </script>
 
 <template>
-  <h1 class="container my-5 debug">Our projects in Boolean</h1>
-  <div>
-    <div class="container row justify-content-between">
-      <projectCard
-        class="col-4"
-        v-for="project in projects"
-        :project="project"
-      />
-    </div>
-  </div>
+   <h1 class="container my-1">Boolean list progects:</h1>
+  <div class="container row justify-content-between">
+    <projectCard
+      class="col-4 m-2"
+      v-for="project in projects"
+      :project="project"
+    />
 </template>
 
 <style lang="scss" scoped></style>
