@@ -13,7 +13,7 @@ export default {
         next: null,
         prev: null,
         links: null,
-      },,
+      }
     };
   },
   components: { ProjectList },
@@ -36,6 +36,7 @@ export default {
 </script>
 
 <template>
+  <router-view></router-view>
   <div class="container my-5">
     <div
       class="btn btn-primary"
