@@ -1,9 +1,27 @@
 <script>
+import axios from "axios";
+import { store } from "../data/store";
+
 export default {
   data() {
-    return {};
+    return {
+      store,
+      project: {},
+    };
   },
   props: {},
+
+  methods: {
+    srchProject(uri = store.baseUrl + "projects/" + this.$route.params.id) {
+      axios.get(uri).then((response) => {
+        this.project = response.data;
+        console.log(this.project);
+      });
+    },
+  },
+  created() {
+    this.srchProject();
+  },
 };
 </script>
 
