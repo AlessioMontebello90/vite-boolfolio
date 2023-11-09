@@ -15,12 +15,18 @@ export default {
       <div class="d-flex g-3">
         <div class="container-fluid">
           <router-link :to="{ name: 'home' }">
-            <span class="navbar-brand mb-0 h1">HOME</span>
+            <span class="navbar-brand mb-0 h1">Projects List</span>
           </router-link>
         </div>
         <div class="container-fluid">
           <router-link :to="{ name: 'Pagina1' }">
             <span class="navbar-brand mb-0 h1">Pagina1</span>
+          </router-link>
+        </div>
+
+        <div class="container-fluid">
+          <router-link :to="{ name: 'portfolio' }">
+            <span class="navbar-brand mb-0 h1">My Boolfolio</span>
           </router-link>
         </div>
       </div>

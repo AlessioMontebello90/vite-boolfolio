@@ -11,7 +11,16 @@ export default {
 
 <template>
   <div class="card" style="width: 20rem">
-    <div class="card-header">{{ project.name }}</div>
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <div class="col-8">
+        {{ project.name }}
+      </div>
+      <div class="btn-detail col-3">
+        <router-link class="router-link-color" :to="{ name: 'project-detail' }">
+          <font-awesome-icon icon="fa-solid fa-eye" />
+        </router-link>
+      </div>
+    </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">{{ project.description }}</li>
 

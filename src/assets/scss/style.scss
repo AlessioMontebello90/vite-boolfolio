@@ -2,3 +2,16 @@
   background-color: rgba(7, 248, 115, 0.849);
   border: 2px dashed dodgerblue;
 }
+
+.btn-detail {
+  color: lightcyan;
+  background-color: lightcoral;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 10px;
+
+  .router-link-color {
+    color: currentColor;
+    text-decoration: none;
+  }
+}
