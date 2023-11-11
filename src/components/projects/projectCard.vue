@@ -8,9 +8,8 @@ export default {
   },
 };
 </script>
-
 <template>
-  <div class="card" style="width: 20rem">
+  <div class="card" style="width: 18rem">
     <div class="card-header d-flex justify-content-between align-items-center">
       <div class="col-8">
         {{ project.name }}
@@ -32,11 +31,19 @@ export default {
         :style="{ backgroundColor: project.type.color }"
         v-if="project.type_id"
       >
-        Topic: {{ project.type.label }}
+        <router-link
+          :to="{
+            name: 'portfolio-by-type',
+            params: { type_id: project.type.id },
+          }"
+          @click="$emit('clickType')"
+        >
+          type: {{ project.type.label }}
+        </router-link>
       </li>
 
       <li class="list-group-item" v-if="project.tecnologies[0]">
-        <div class="fw-bold">tecnologies:</div>
+        <div class="fw-bold">Tecnologies:</div>
         <div
           class="div"
           v-for="tecnology in project.tecnologies"
@@ -48,5 +55,4 @@ export default {
     </ul>
   </div>
 </template>
-
 <style lang="scss" scoped></style>

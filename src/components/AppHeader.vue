@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <h1 class="container my-3">Header Boolfolio</h1>
+  <h1 class="container my-3">Boolfolio</h1>
 
   <nav class="navbar bg-body-tertiary">
     <div class="container">

@@ -2,7 +2,6 @@
 import ProjectList from "../components/projects/ProjectList.vue";
 import axios from "axios";
 import { store } from "../data/store";
-
 export default {
   data() {
     return {
@@ -15,20 +14,9 @@ export default {
       },
     };
   },
-
   components: { ProjectList },
   props: {},
-
   methods: {
-    fetchProjects(uri = store.baseUrl + "projects") {
-      axios.get(uri).then((response) => {
-        this.projects = response.data.projects.data;
-        this.pagination.prev = response.data.projects.prev_page_url;
-        this.pagination.next = response.data.projects.next_page_url;
-        this.pagination.links = response.data.projects.links;
-      });
-      this.renderkey++;
-    },
     fetchProjectsType(
       uri = store.baseUrl + "projects/type/" + this.$route.params.type_id
     ) {
@@ -36,16 +24,16 @@ export default {
         .get(uri)
         .then((response) => {
           this.projects = response.data.projects.data;
+
           this.pagination.prev = response.data.projects.prev_page_url;
           this.pagination.next = response.data.projects.next_page_url;
           this.pagination.links = response.data.projects.links;
         })
         .catch((error) => {});
-      this.renderkey++;
     },
   },
   created() {
-    this.fetchProjects();
+    this.fetchProjectsType();
   },
 };
 </script>
@@ -56,12 +44,19 @@ export default {
       <div
         v-for="link in pagination.links"
         class="btn btn-warning"
-        @click="fetchProjects(link.url)"
+        @click="fetchProjectsType(link.url)"
         v-html="link.label"
       ></div>
     </div>
 
-    <div class="container"></div>
+    <div class="container">
+      <ProjectList
+        :key="renderkey"
+        :projects="projects"
+        @clickType="fetchProjectsType()"
+      />
+    </div>
   </div>
 </template>
+
 <style lang="scss" scoped></style>

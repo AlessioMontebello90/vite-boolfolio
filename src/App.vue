@@ -1,5 +1,5 @@
 <script>
-import AppHeader from "./components/AppHeade.vue";
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
   data() {
@@ -10,7 +10,7 @@ export default {
 </script>
 <template>
   <AppHeader></AppHeader>
-  <div class="container debug"></div>
+  <div class="container"></div>
   <router-view></router-view>
 </template>
 <style lang="scss"></style>

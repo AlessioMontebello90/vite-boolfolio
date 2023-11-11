@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <div class="container my-3 debug">
+  <div class="container my-3">
     <h1>Pagina 1</h1>
     <h3>......</h3>
   </div>

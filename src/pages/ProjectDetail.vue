@@ -13,13 +13,8 @@ export default {
 
   methods: {
     srchProject(uri = store.baseUrl + "projects/" + this.$route.params.slug) {
-      console.log(uri);
       axios.get(uri).then((response) => {
         this.project = response.data;
-        console.log("wakka");
-        console.log(response.data);
-        console.log("try");
-        console.log(this.project);
       });
     },
   },
@@ -30,7 +25,7 @@ export default {
 </script>
 
 <template>
-  <div class="container my-3 debug">
+  <div class="container my-3">
     <h1>All Projects</h1>
     <h3>Second Page</h3>
     <br />
