@@ -18,7 +18,7 @@ export default {
       <div class="btn-detail col-3 text-center">
         <router-link
           class="router-link-color"
-          :to="{ name: 'project-detail', params: { id: project.id } }"
+          :to="{ name: 'project-detail', params: { slug: project.slug } }"
         >
           <font-awesome-icon icon="fa-solid fa-eye" />
         </router-link>

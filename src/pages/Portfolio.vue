@@ -22,6 +22,8 @@ export default {
   methods: {
     fetchProjects(uri = store.baseUrl + "projects") {
       axios.get(uri).then((response) => {
+        console.log("Alessio");
+        console.log(response.data);
         this.projects = response.data.projects.data;
         console.log(this.projects);
         this.pagination.prev = response.data.projects.prev_page_url;
